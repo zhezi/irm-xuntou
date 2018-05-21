@@ -1,0 +1,20 @@
+[
+    {
+        "tradingDate":"2016-07-27",
+        "accountNo":"1001103061",
+        "contractCode":"al1610",
+        "sessionId":"85004572",
+        "transactionFlag":-1,
+        "accountId":"Test1",
+        "speculationHedging":1,
+        "holdingQuantity":11,
+        "tradingMargin":52888,
+        "holdPl":3025,
+        "cumPl":8650,
+        "averagePrice":12177.273,
+        "preSettlePrice":12075,
+        "settlePrice":12020,
+        "securityType":1,
+        "updateTime":"2017-11-03 07:09:11"
+    }
+]
