@@ -1,8 +1,17 @@
 package com.xingyoucai.irm.http;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLSession;
+
+import okhttp3.Cookie;
+import okhttp3.CookieJar;
+import okhttp3.HttpUrl;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -18,7 +27,25 @@ public class OkHttpUtils {
 
 	public static OkHttpClient getInstance() {
 		if (clent == null)
-			clent = new OkHttpClient.Builder().readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)// 设置读取超时时间
+			clent = new OkHttpClient.Builder().cookieJar(new CookieJar() {
+				private final HashMap<String, List<Cookie>> cookieStore = new HashMap<String, List<Cookie>>();
+
+				@Override
+				public void saveFromResponse(HttpUrl url, List<Cookie> cookies) {
+					cookieStore.put(url.host(), cookies);
+				}
+
+				@Override
+				public List<Cookie> loadForRequest(HttpUrl url) {
+					List<Cookie> cookies = cookieStore.get(url.host());
+					return cookies != null ? cookies : new ArrayList<Cookie>();
+				}
+			}).hostnameVerifier(new HostnameVerifier() {
+				@Override
+				public boolean verify(String hostname, SSLSession session) {
+					return true;
+				}
+			}).readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)// 设置读取超时时间
 					.writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS)// 设置写的超时时间
 					.connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)// 设置连接超时时间
 					.build();

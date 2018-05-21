@@ -14,7 +14,7 @@ public class AppTest {
 	@Test
 	public void test() throws IOException {
 		
-		String host="http://localhost";
+		String host="https://ssl-fof.xingyoucai.com";
 		
 		String result="";
 		//基金信息
@@ -32,7 +32,7 @@ public class AppTest {
 //		//开始计算
 //		result=OkHttpUtils.get(host+"/api/v1/generator/Test");
 //		//计算结果
-//		result=OkHttpUtils.get(host+"/api/v1/chart/Test/612,807");//自由组合
+//		result=OkHttpUtils.get(host+"/api/v1/chart/Test/809,807");//自由组合
 		
 		System.out.println(result);
  
