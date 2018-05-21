@@ -21,13 +21,13 @@ public class AppTest {
 		result=OkHttpUtils.post(host+"/api/v1/save/fundInfo",getJson("Fundinfo.json"));
 		//净值信息
 //		result=OkHttpUtils.post(host+"/api/v1/save/nvDataList",getJson("Nvdata.json"));
-//		//Fund持仓
+//		//Fund持仓--可选
 //		result=OkHttpUtils.post(host+"/api/v1/save/fundHoldingList",getJson("Fundholding.json"));
-//		//Fof持仓
+//		//Fof持仓--可选
 //		result=OkHttpUtils.post(host+"/api/v1/save/fofHoldingList",getJson("FofHoldingList.json"));
-//		//期货持仓
+//		//期货持仓--可选
 //		result=OkHttpUtils.post(host+"/api/v1/save/futuresHoldDataList",getJson("FuturesHoldData.json"));
-//		//结算单
+//		//结算单--可选
 //		result=OkHttpUtils.post(host+"/api/v1/save/futuresTradeDataList",getJson("FuturesTradeData.json"));
 //		//开始计算
 //		result=OkHttpUtils.get(host+"/api/v1/generator/Test");

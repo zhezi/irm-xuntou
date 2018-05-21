@@ -55,54 +55,6 @@ https://ssl-fof.xingyoucai.com
 | endTime    | 终止时间       |
 | updateTime    | 更新时间       |
 
-> 数据示例
-```
-{
-  "accountId": "Test",
-  "investorName": "测试",
-  "invest1stStyle": 7,
-  "investStyle": 10,
-  "monitorLevel": "B",
-  "startTime": "2017-03-31 00:00:00",
-  "stop": 0.8,
-  "warning": 0.85,
-  "accountStatus": 1,
-  "updateTime": "2017-04-10 10:36:14"
-}
-```
-
-> Java 示例
-```Java
-String url="http://localhost/api/v1/save/fundInfo";
-String json=数据示例;
-RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), json);
-Request request = new Request.Builder().url(url).post(requestBody).build();
-Response response =getInstance().newCall(request).execute();
-System.out.println(response.body().string());
-
-private static OkHttpClient clent = null;
-public static OkHttpClient getInstance() {
-  if (clent == null)
-    clent = new OkHttpClient.Builder().readTimeout(300, TimeUnit.SECONDS).writeTimeout(300, TimeUnit.SECONDS).connectTimeout(300, TimeUnit.SECONDS).build();
-    return clent;
-}
-```
-
-> Python 示例
-
-```Python
-import requests, json
-url = "http://localhost/api/v1/save/fundInfo"
-payload = 数据示例
-dataStr = json.dumps(payload)
-headers = {
-  'content-type': "application/json"
-}
-response = requests.post(url, data=dataStr, headers=headers, timeout=300)
-print (response.text)
-```
-
-
 # 净值
 > 接口
 * /api/v1/save/nvData(单个)
@@ -125,55 +77,7 @@ print (response.text)
 |  totalCostValue      | 实收资本       |
 |  totalMarketValue    | 总市值       |
 |  updateTime    | 更新时间       |
-> 数据示例(单个)
-```
-{
-  "acct": "Test",
-  "assetOfficial": 1.04,
-  "assetUs": 1.04,
-  "longValue": 1796947,
-  "margin": 821152.8,
-  "shortValue": -2648880,
-  "totalCostValue": 28724882.63,
-  "totalMarketValue": 29873356.47,
-  "tradingDay": "2017-09-20 00:00:00",
-  "updateTime": "2017-10-16 09:00:12"
-}
-```
-> 数据示例(多个)
 
-```
-[{},{},....]
-```
-> Java 示例
-```Java
-String url="http://localhost/api/v1/save/nvData";
-String json=数据示例;
-RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), json);
-Request request = new Request.Builder().url(url).post(requestBody).build();
-Response response = getInstance().newCall(request).execute();
-System.out.println(response.body().string());
-
-private static OkHttpClient clent = null;
-public static OkHttpClient getInstance() {
-  if (clent == null)
-    clent = new OkHttpClient.Builder().readTimeout(300, TimeUnit.SECONDS).writeTimeout(300, TimeUnit.SECONDS).connectTimeout(300, TimeUnit.SECONDS).build();
-    return clent;
-}
-```
-> Python 示例
-
-```Python
-import requests, json
-url = "http://localhost/api/v1/save/nvData"
-payload = 数据示例
-dataStr = json.dumps(payload)
-headers = {
-  'content-type': "application/json"
-}
-response = requests.post(url, data=dataStr, headers=headers, timeout=300)
-print (response.text)
-```
 # 基金持仓
 > 接口
 * /api/v1/save/fundHolding(单个)
@@ -197,55 +101,6 @@ print (response.text)
 | securityName       | 证券名称      |
 | securityType       | 证券类型<br/>1-	股票<br/>2-	投资基金（ETF）<br/>3-	保证金<br/>4-	其他（证券清算款，备付金，卖出回购，买入返售,短期借款）其中卖出回购和短期借款是负债类得减掉改数目。<br/>5-	股指期货<br/>6-	商品期货<br/>7-	债券期货<br/>8-	股指期权 （成本为负，则是卖出期权，成本为正，则是买入期权）<br/>9-	债券<br/>10-	应收利息<br/>11-       现金<br/>12-   其他资产 （其他私募产品，例如新晖1号，购买了中子星-星光E）<br/>13-       商品期权      |
 | updateTime       | 更新时间      |
-> 数据示例(单个)
-```
-{
-  "accountId": "Test",
-  "costPrice": 2383,
-  "marketPrice": 2361,
-  "marketValue": 566640,
-  "posDate": "2017-12-08 00:00:00",
-  "principal": 571920,
-  "quantity": 24,
-  "securityId": "RM805 ",
-  "securityName": "RM805",
-  "securityType": 6,
-  "updateTime": "2017-12-12 02:56:02"
-}
-```
-> 数据示例(多个)
-```
-[{},{},....]
-```
-> Java 示例
-```Java
-String url="http://localhost/api/v1/save/fundHolding";
-String json=数据示例;
-RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), json);
-Request request = new Request.Builder().url(url).post(requestBody).build();
-Response response = getInstance().newCall(request).execute();
-System.out.println(response.body().string());
-
-private static OkHttpClient clent = null;
-public static OkHttpClient getInstance() {
-  if (clent == null)
-    clent = new OkHttpClient.Builder().readTimeout(300, TimeUnit.SECONDS).writeTimeout(300, TimeUnit.SECONDS).connectTimeout(300, TimeUnit.SECONDS).build();
-    return clent;
-}
-```
-> Python 示例
-
-```Python
-import requests, json
-url = "http://localhost/api/v1/save/fundHolding"
-payload = 数据示例
-dataStr = json.dumps(payload)
-headers = {
-  'content-type': "application/json"
-}
-response = requests.post(url, data=dataStr, headers=headers, timeout=300)
-print (response.text)
-```
 
 # FOF持仓
 > 接口
@@ -267,52 +122,6 @@ print (response.text)
 | principal       | 成本价值       |
 | quantity       | 数量       |
 | updateTime       | 更新时间       |
-> 数据示例(单个)
-```
-{
-  "fofId": "Test",
-  "accountId": "Test1",
-  "assetType": 1,
-  "costPrice": 1.02,
-  "posDate": "2017-12-07 00:00:00",
-  "principal": 30600000,
-  "quantity": 29874060.33,
-  "updateTime": "2017-12-12 03:03:06"
-}
-```
-> 数据示例(多个)
-```
-[{},{},....]
-```
-> Java 示例
-```Java
-String url="http://localhost/api/v1/save/fofHolding";
-String json=数据示例;
-RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), json);
-Request request = new Request.Builder().url(url).post(requestBody).build();
-Response response = getInstance().newCall(request).execute();
-System.out.println(response.body().string());
-
-private static OkHttpClient clent = null;
-public static OkHttpClient getInstance() {
-  if (clent == null)
-    clent = new OkHttpClient.Builder().readTimeout(300, TimeUnit.SECONDS).writeTimeout(300, TimeUnit.SECONDS).connectTimeout(300, TimeUnit.SECONDS).build();
-    return clent;
-}
-```
-> Python 示例
-
-```Python
-import requests, json
-url = "http://localhost/api/v1/save/fofHolding"
-payload = 数据示例
-dataStr = json.dumps(payload)
-headers = {
-  'content-type': "application/json"
-}
-response = requests.post(url, data=dataStr, headers=headers, timeout=300)
-print (response.text)
-```
 
 # 期货持仓
 > 接口
@@ -342,60 +151,6 @@ print (response.text)
 | securityType       | 合约类型<br/>1．	商品期货<br/>2．	股指期货<br/>3．	国债期货<br/>       |
 | settlePrice       | 结算价       |
 | updateTime       | 更新日期       |
-> 数据示例(单个)
-```
-{
-  "accountId": "Test",
-  "averagePrice": 614.8,
-  "cumPl": 840,
-  "holdPl": 960,
-  "holdingQuantity": 6,
-  "preSettlePrice": 615,
-  "securityType": 1,
-  "settlePrice": 613.4,
-  "speculationHedging": 1,
-  "tradingMargin": 40484.4,
-  "updateTime": "2017-11-08 11:18:08",
-  "tradingDate": "2017-11-03 00:00:00",
-  "accountNo": "100110306",
-  "contractCode": "ZC801",
-  "sessionId": "99806779",
-  "transactionFlag": -1
-}
-```
-> 数据示例(多个)
-```
-[{},{},....]
-```
-> Java 示例
-```Java
-String url="http://localhost/api/v1/save/futuresHoldData";
-String json=数据示例;
-RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), json);
-Request request = new Request.Builder().url(url).post(requestBody).build();
-Response response = getInstance().newCall(request).execute();
-System.out.println(response.body().string());
-
-private static OkHttpClient clent = null;
-public static OkHttpClient getInstance() {
-  if (clent == null)
-    clent = new OkHttpClient.Builder().readTimeout(300, TimeUnit.SECONDS).writeTimeout(300, TimeUnit.SECONDS).connectTimeout(300, TimeUnit.SECONDS).build();
-    return clent;
-}
-```
-> Python 示例
-
-```Python
-import requests, json
-url = "http://localhost/api/v1/save/futuresHoldData"
-payload = 数据示例
-dataStr = json.dumps(payload)
-headers = {
-  'content-type': "application/json"
-}
-response = requests.post(url, data=dataStr, headers=headers, timeout=300)
-print (response.text)
-```
 
 # 结算单
 > 接口
@@ -428,62 +183,6 @@ print (response.text)
 | commissionFee| 手续费|
 | dealDate | 实际成交日期|
 | updateTime       | 更新日期       |
-> 数据示例(单个)
-```
-{
-  "accountId": "Test",
-  "commissionFee": 18.37,
-  "cumPl": 20000,
-  "dealDate": "2016-11-13 00:00:00",
-  "liquidPl": 7100,
-  "openClose": 2,
-  "securityType": 1,
-  "speculationHedging": 1,
-  "tradingPrice": 638,
-  "tradingQuantity": 2,
-  "tradingTime": "09:00:00",
-  "tradingValue": 127600,
-  "updateTime": "2017-11-16 17:25:18",
-  "tradingDate": "2016-11-14 00:00:00",
-  "contractCode": "i1701",
-  "sessionId": "30001687",
-  "accountNo": "100110306",
-  "transactionFlag": -1
-}
-```
-> 数据示例(多个)
-```
-[{},{},....]
-```
-> Java 示例
-```Java
-String url="http://localhost/api/v1/save/futuresTradeData";
-String json=数据示例;
-RequestBody requestBody = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), json);
-Request request = new Request.Builder().url(url).post(requestBody).build();
-Response response = getInstance().newCall(request).execute();
-System.out.println(response.body().string());
-
-private static OkHttpClient clent = null;
-public static OkHttpClient getInstance() {
-  if (clent == null)
-    clent = new OkHttpClient.Builder().readTimeout(300, TimeUnit.SECONDS).writeTimeout(300, TimeUnit.SECONDS).connectTimeout(300, TimeUnit.SECONDS).build();
-    return clent;
-}
-```
-> Python 示例
-
-```Python
-import requests, json
-url = "http://localhost/api/v1/save/futuresTradeData"
-payload = 数据示例
-dataStr = json.dumps(payload)
-headers = {
-  'content-type': "application/json"
-}
-response = requests.post(url, data=dataStr, headers=headers, timeout=300)
-print (response.text)
-```
 
 # API(生成数据)
 > 接口
@@ -505,22 +204,6 @@ print (response.text)
 | :------- | :-------| :------------- |
 | status   | int  | 0正常-1异常|
 | message  | string  | 异常信息|
-> Java 示例
-```Java
-String url="http://localhost/api/v1/generator/Test";
-OkHttpClient client = new OkHttpClient();
-Response response = client.newCall(new Request.Builder().url(url).build()).execute();
-System.out.println(response.body().string());
-```
-> Python 示例
-
-```Python
-import requests, json
-url = "http://localhost/api/v1/generator/Test"
-response = requests.get(url)
-print (response.text)
-```
-
 
 
 # API(取数据)
