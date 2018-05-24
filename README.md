@@ -258,8 +258,15 @@ https://ssl-fof.xingyoucai.com
 | chart209       |<a href="https://code.hcharts.cn/chartData_json/r9ZLsW"> 市值分布</a>      |
 | chart210       |<a href="https://code.hcharts.cn/chartData_json/UeYLsa"> 大中小盘收益归因</a>      |
 | chart211       |<a href="https://code.hcharts.cn/chartData_json/rOhLsq"> 周度换手率</a>      |
-| chart212       |<a href="https://code.hcharts.cn/chartData_json/eKVLs7"> 风格暴露</a>      |
 | chart213       |<a href="https://code.hcharts.cn/chartData_json/CFCLso"> 舆情监控</a>      |
+| chart214       |<a href="https://code.hcharts.cn/xingyoucai/5epXwl/1">风格暴露</a>     |
+| chart217       |<a href="https://code.hcharts.cn/xingyoucai/5epXwl/2">情景分析</a>|
+| chart218       |<a href="https://code.hcharts.cn/xingyoucai/5epXwl/3">股票持仓VaR</a>|
+| chart219       |<a href="https://code.hcharts.cn/temp/rZd6LT/2">因子暴露&收益贡献</a>|
+| chart220       |<a href="https://code.hcharts.cn/temp/5epXwl">风格趋势</a>|
+| chart221       |<a href="https://code.hcharts.cn/xingyoucai/5epXwl/4">股票仓位历史走势</a> |
+| chart222       |<a href="https://code.hcharts.cn/xingyoucai/5epXwl/5">净暴露历史走势</a> |
+| chart223       |<a href="https://code.hcharts.cn/xingyoucai/5epXwl/6">年化滚动换手率(20交易日)</a>|
 
 ---
 ## 期权策略
