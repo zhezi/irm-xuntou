@@ -263,7 +263,7 @@ https://ssl-fof.xingyoucai.com
 | chart217       |<a href="https://code.hcharts.cn/xingyoucai/5epXwl/2">情景分析</a>|
 | chart218       |<a href="https://code.hcharts.cn/xingyoucai/5epXwl/3">股票持仓VaR</a>|
 | chart219       |<a href="https://code.hcharts.cn/temp/rZd6LT/2">因子暴露&收益贡献</a>|
-| chart220       |<a href="https://code.hcharts.cn/temp/5epXwl">风格趋势</a>|
+| chart220       |<a href="https://code.hcharts.cn/xingyoucai/5epXwl/7">风格趋势</a>|
 | chart221       |<a href="https://code.hcharts.cn/xingyoucai/5epXwl/4">股票仓位历史走势</a> |
 | chart222       |<a href="https://code.hcharts.cn/xingyoucai/5epXwl/5">净暴露历史走势</a> |
 | chart223       |<a href="https://code.hcharts.cn/xingyoucai/5epXwl/6">年化滚动换手率(20交易日)</a>|
