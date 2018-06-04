@@ -320,7 +320,6 @@ https://ssl-fof.xingyoucai.com
 | :------------- | :------------- |
 | chart806       | <a href="https://code.hcharts.cn/chartData_json/E9BLjv">持仓总览</a>|
 | chart807       | <a href="https://code.hcharts.cn/chartData_json/K5FLj2">基础线</a>|
-| chart808       |<a href="https://code.hcharts.cn/chartData_json/CEpLjk">关键指标</a>|
 | chart809       |<a href="https://code.hcharts.cn/chartData_json/eVrLjW">月度收益</a>|
 | chart810       |<a href="https://code.hcharts.cn/chartData_json/VNZLja">回撤对比</a>|
 | chart811       |<a href="https://code.hcharts.cn/chartData_json/BStLjq">大类品种收益时序</a>|
