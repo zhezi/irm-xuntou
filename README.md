@@ -6,35 +6,31 @@ https://ssl-fof.xingyoucai.com
 
 | 接口     | 说明     |
 | :------------- | :------------- |
-| /api/v1/save/fundInfo            | 保存基金信息         |
-| /api/v1/save/nvData              | 保存净值(单个)       |
-| /api/v1/save/nvDataList          | 保存净值(多个)       |
-| /api/v1/save/fundHolding         | 保存基金持仓(单个)   |
-| /api/v1/save/fundHoldingList     | 保存基金持仓(多个)   |
-| /api/v1/save/fofHolding          | 保存FOF持仓(单个)    |
-| /api/v1/save/fofHoldingList      | 保存FOF持仓(多个)    |
-| /api/v1/save/futuresHoldData     | 保存期货持仓(单个)   |
-| /api/v1/save/futuresHoldDataList | 保存期货持仓(多个)   |
-| /api/v1/save/futuresTradeData    | 保存结算单(单个)     |
-| /api/v1/save/futuresTradeDataList| 保存结算单(多个)     |
+| /api/v1.2/save/fundInfo            | 保存基金信息         |
+| /api/v1.2/save/fundNvList          | 保存净值(多个)       |
+| /api/v1.2/save/fundPostitionList   | 保存基金持仓(多个)   |
+| /api/v1.2/save/futuresHoldData     | 保存期货持仓(单个)   |
+| /api/v1.2/save/futuresHoldDataList | 保存期货持仓(多个)   |
+| /api/v1.2/save/futuresTradeData    | 保存结算单(单个)     |
+| /api/v1.2/save/futuresTradeDataList| 保存结算单(多个)     |
 ---
 > 生成数据
 
 | 接口 | 说明     |
 | :------------- | :------------- |
-| /api/v1/generator/{acct}  | 生成数据       |
+| /api/v1.2/generator/{innerCode}  | 生成数据       |
 ---
 > 取数据
 
 | 接口 | 说明     |
 | :------------- | :------------- |
-| /api/v1/chart/{acct}/{types}  | 计算数据       |
+| /api/v1.2/chart/{innerCode}/{types}  | 计算数据       |
 ---
 
 
 # 基金信息
 > 接口
-* /api/v1/save/fundInfo
+* /api/v1.2/save/fundInfo
 
 > 方法
 * POST
@@ -43,22 +39,20 @@ https://ssl-fof.xingyoucai.com
 
 | 参数 | 说明    |
 | :------------- | :------------- |
-| accountId       | 基金编号       |
-| investorName       | 基金名称       |
-| invest1stStyle  | 投资策略1级分类:<br/>1.	中性策略<br/>2.	股票多头<br/>3.	期货策略<br/>4.	债券策略<br/>5.	混合策略<br/>6.	FOF<br/>7.	其他|
-| investStyle     | 投资策略2级分类:<br/>1-EL 股票多头;<br/>2-MU 股票量化对冲策略;<br/>3-MT 择时对冲;<br/>4-AR 套利;<br/>5-AF 主观期货;<br/>6-QF 量化期货;<br/>7-BO 债券策略;<br/>8-MUL 混合多策略;<br/>9-FOF;<br/>10-OTH 其他|
+| innerCode       | 基金编号       |
+| fundFullName       | 基金名称       |
+| strategyId1  | 投资策略1级分类:<br/>1.	中性策略<br/>2.	股票多头<br/>3.	期货策略<br/>4.	债券策略<br/>5.	混合策略<br/>6.	FOF<br/>7.	其他|
+| strategyId2     | 投资策略2级分类:<br/>1-EL 股票多头;<br/>2-MU 股票量化对冲策略;<br/>3-MT 择时对冲;<br/>4-AR 套利;<br/>5-AF 主观期货;<br/>6-QF 量化期货;<br/>7-BO 债券策略;<br/>8-MUL 混合多策略;<br/>9-FOF;<br/>10-OTH 其他|
 | monitorLevel       | 账户监控等级：<br/>AA 自主发行产品<br/>周报，监控大类配置，风险指标<br/>A  对AA业绩风险有重要影响的产品<br/>每日更新净值，监控仓位，月度团队沟通<br/>B 对AA业绩风险影响较小的产品<br/>两个月团队沟通，不用监控仓位，定期监控净值<br/>C 通道产品<br/>监控预警清盘线<br/>O 分析产品数据       |
-| stop   | 平仓线       |
-| warning   | 警戒线       |
-| accountStatus   | 基金状态: 1-正在进行;2-已经停止       |
-| startTime    | 开始时间       |
-| endTime    | 终止时间       |
-| updateTime    | 更新时间       |
+| stopLossLine   | 平仓线       |
+| warningLine   | 警戒线       |
+| workingState   | 基金状态: 1-正在进行;2-已经停止       |
+| establishDate    | 开始时间       |
+| expirationDate    | 终止时间       |
 
 # 净值
 > 接口
-* /api/v1/save/nvData(单个)
-* /api/v1/save/nvDataList(全部)
+* /api/v1.2/save/fundNvList
 
 > 方法
 * POST
@@ -67,21 +61,19 @@ https://ssl-fof.xingyoucai.com
 
 | 参数 | 说明     |
 | :------------- | :------------- |
-|  acct      | 基金编号       |
-|  assetUs      | 估算净值       |
-|  tradingDay      | 交易日       |
-|  assetOfficial      | 官方净值       |
-|  longValue      | 多头市值<br/>Fundholding表中security_type=1,5,6,7,9,13的资产市值为正数的累和       |
-|  shortValue      | 空头市值<br/>Fundholding表中security_type=1,5,6,7,9,13的资产市值为负数的累和       |
-|  margin      | 保证金       |
-|  totalCostValue      | 实收资本       |
+|  innerCode      | 基金编号       |
+|  nvAccum        |   净值       |
+|  tradeDate      | 交易日       |
+|  longValue      | 多头市值<br/>FundPosition中security_type=1,5,6,7,9,13的资产市值为正数的累和       |
+|  shortValue     | 空头市值<br/>FundPosition中security_type=1,5,6,7,9,13的资产市值为负数的累和       |
+|  margin         | 保证金       |
+|  totalCostValue     | 实收资本       |
 |  totalMarketValue    | 总市值       |
-|  updateTime    | 更新时间       |
+
 
 # 基金持仓
 > 接口
-* /api/v1/save/fundHolding(单个)
-*  /api/v1/save/fundHoldingList(全部)
+*  /api/v1.2/save/fundPositionList
 
 > 方法
 * POST
@@ -90,43 +82,22 @@ https://ssl-fof.xingyoucai.com
 
 | 参数 | 说明     |
 | :------------- | :------------- |
-| accountId       | 基金编号      |
-| posDate       | 持仓日期      |
-| marketPrice       | 市价      |
-| marketValue       | 市值      |
-| principal       | 成本价值      |
-| costPrice       | 成本价格      |
-| quantity       | 数量      |
-| securityId       | 证券ID      |
+| innerCode       | 基金编号      |
+| tradeDate       | 持仓日期      |
+| securityCode       | 证券ID      |
 | securityName       | 证券名称      |
-| securityType       | 证券类型<br/>1-	股票<br/>2-	投资基金（ETF）<br/>3-	保证金<br/>4-	其他（证券清算款，备付金，卖出回购，买入返售,短期借款）其中卖出回购和短期借款是负债类得减掉改数目。<br/>5-	股指期货<br/>6-	商品期货<br/>7-	债券期货<br/>8-	股指期权 （成本为负，则是卖出期权，成本为正，则是买入期权）<br/>9-	债券<br/>10-	应收利息<br/>11-       现金<br/>12-   其他资产 （其他私募产品，例如新晖1号，购买了中子星-星光E）<br/>13-       商品期权      |
+| securityType       | 证券类型1-	股票（1102股票投资，1102.65/81/82/83港股通，<br/>2-	投资基金（ETF）<br/>3-	保证金（1031存出保证金，<br/>4-	其他(1021备付金，<br/>（证券清算款，备付金，卖出回购，买入返售,短期借款）<br/>其中卖出回购和短期借款是负债类得减掉改数目。<br/>5-	股指期货<br/>6-	商品期货<br/>7-	债券期货<br/>8-	股指期权 （成本为负，则是卖出期权，成本为正，则是买入期权）<br/>9-	债券<br/>10-	应收利息<br/>11- 现金(1002存款,<br/>12- 私募产品 （其他私募产品，例如新晖1号，购买了中子星-星光E）<br/>13- 商品期权<br/>14- 负债|
+| cost       | 成本      |
+| costPrice       | 成本价格      |
+| volume       | 持仓量      |
+| close       | 市价      |
+| marketCap       | 持仓市值      |
 | updateTime       | 更新时间      |
-
-# FOF持仓
-> 接口
-* /api/v1/save/fofHolding(单个)
-* /api/v1/save/fofHoldingList(全部)
-
-> 方法
-* POST
-
-> 输入参数
-
-| 参数     | 说明     |
-| :------------- | :------------- |
-| fofId       | FOF基金ID      |
-| posDate       | 持仓日期       |
-| accountId       | 持仓资产ID       |
-| assetType       | 持仓资产类型<br/> 1-基金;<br/>2-投资ETF以及买入返售  通用id名称，fofid_etf<br/> 3-保证金账户 通用id名称，fofid_margin <br/>4-现金 通用id名称，fofid_cash <br/>5-其他（其他：备付金，证券清算款等）       |
-| costPrice       | 成本价格       |
-| principal       | 成本价值       |
-| quantity       | 数量       |
-| updateTime       | 更新时间       |
 
 # 期货持仓
 > 接口
-* /api/v1/save/futuresHoldData(单个)
-* /api/v1/save/futuresHoldDataList(全部)
+* /api/v1.2/save/futuresHoldData(单个)
+* /api/v1.2/save/futuresHoldDataList(全部)
 
 > 方法
 * POST
@@ -154,8 +125,8 @@ https://ssl-fof.xingyoucai.com
 
 # 结算单
 > 接口
-* /api/v1/save/futuresTradeData(单个)
-* /api/v1/save/futuresTradeDataList(全部)
+* /api/v1.2/save/futuresTradeData(单个)
+* /api/v1.2/save/futuresTradeDataList(全部)
 
 > 方法
 * POST
@@ -187,7 +158,7 @@ https://ssl-fof.xingyoucai.com
 # API(生成数据)
 > 接口
 
-**/api/v1/generator/{acct}**
+**/api/v1.2/generator/{innerCode}**
 
 > 方法
 * GET
@@ -196,7 +167,7 @@ https://ssl-fof.xingyoucai.com
 
 | 字段     | 类型     | 说明     |
 | :------- | :-------| :------------- |
-| acct     | string  | 基金AccountId|
+| innerCode     | string  | 基金编码     |
 
 > 输出参数
 
@@ -212,7 +183,7 @@ https://ssl-fof.xingyoucai.com
 ## 债券策略
 > 接口
 
-**/api/v1/chart/{acct}/{types}**
+**/api/v1.2/chart/{innerCode}/{types}**
 
 > 方法
 * GET
@@ -221,7 +192,7 @@ https://ssl-fof.xingyoucai.com
 
 | 字段     | 类型     | 说明     |
 | :------- | :-------| :------------- |
-| acct     | string  | 基金AccountId|
+| innerCode     | string  | 基金编码|
 > 输出参数
 
 | 编号     | 说明     |
@@ -334,7 +305,7 @@ https://ssl-fof.xingyoucai.com
 
 > 接口
 
-**/api/v1/index/S00000,S00001,S00002,S00003,S00004,S00005,S00006,S00007**
+**/api/v1.2/index/S00000,S00001,S00002,S00003,S00004,S00005,S00006,S00007**
 
 > 方法
 * GET

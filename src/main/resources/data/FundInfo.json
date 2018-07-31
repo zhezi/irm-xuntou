@@ -1,0 +1,11 @@
+{
+    "innerCode":"Test",
+    "fundFullName":"测试",
+    "strategyId1":7,
+    "strategyId2":10,
+    "monitorLevel":"B",
+    "establishDate":"2017-03-31",
+    "stopLossLine":0.8,
+    "warningLine":0.85,
+    "workingState":1
+}
