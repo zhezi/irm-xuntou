@@ -37,18 +37,17 @@ https://ssl-fof.xingyoucai.com
 
 > 输入参数
 
-| 参数 | 说明    |
-| :------------- | :------------- |
-| innerCode       | 基金编号       |
-| fundFullName       | 基金名称       |
-| strategyId1  | 投资策略1级分类:<br/>1.	中性策略<br/>2.	股票多头<br/>3.	期货策略<br/>4.	债券策略<br/>5.	混合策略<br/>6.	FOF<br/>7.	其他|
-| strategyId2     | 投资策略2级分类:<br/>1-EL 股票多头;<br/>2-MU 股票量化对冲策略;<br/>3-MT 择时对冲;<br/>4-AR 套利;<br/>5-AF 主观期货;<br/>6-QF 量化期货;<br/>7-BO 债券策略;<br/>8-MUL 混合多策略;<br/>9-FOF;<br/>10-OTH 其他|
-| monitorLevel       | 账户监控等级：<br/>AA 自主发行产品<br/>周报，监控大类配置，风险指标<br/>A  对AA业绩风险有重要影响的产品<br/>每日更新净值，监控仓位，月度团队沟通<br/>B 对AA业绩风险影响较小的产品<br/>两个月团队沟通，不用监控仓位，定期监控净值<br/>C 通道产品<br/>监控预警清盘线<br/>O 分析产品数据       |
-| stopLossLine   | 平仓线       |
-| warningLine   | 警戒线       |
-| workingState   | 基金状态: 1-正在进行;2-已经停止       |
-| establishDate    | 开始时间       |
-| expirationDate    | 终止时间       |
+| 参数 | 是否必填  | 说明    |
+| :------------- | :------------- | :------------- |
+| innerCode   |是    | 基金编号       |
+| fundFullName  |是     | 基金名称       |
+| strategyId1  |是| 投资策略1级分类:<br/>1.	中性策略<br/>2.	股票多头<br/>3.	期货策略<br/>4.	债券策略<br/>5.	混合策略<br/>6.	FOF<br/>7.	其他|
+| strategyId2  |否   | 投资策略2级分类:<br/>1-EL 股票多头;<br/>2-MU 股票量化对冲策略;<br/>3-MT 择时对冲;<br/>4-AR 套利;<br/>5-AF 主观期货;<br/>6-QF 量化期货;<br/>7-BO 债券策略;<br/>8-MUL 混合多策略;<br/>9-FOF;<br/>10-OTH 其他|
+| monitorLevel |否      | 账户监控等级：<br/>AA 自主发行产品<br/>周报，监控大类配置，风险指标<br/>A  对AA业绩风险有重要影响的产品<br/>每日更新净值，监控仓位，月度团队沟通<br/>B 对AA业绩风险影响较小的产品<br/>两个月团队沟通，不用监控仓位，定期监控净值<br/>C 通道产品<br/>监控预警清盘线<br/>O 分析产品数据       |
+| establishDate |是   | 开始时间       |
+| stopLossLine  |否  | 平仓线       |
+| warningLine   |否| 警戒线       |
+| workingState  |是| 基金状态: 1-正在进行;2-已经停止       |
 
 # 净值
 > 接口
@@ -59,16 +58,16 @@ https://ssl-fof.xingyoucai.com
 
 > 输入参数
 
-| 参数 | 说明     |
-| :------------- | :------------- |
-|  innerCode      | 基金编号       |
-|  nvAccum        |   净值       |
-|  tradeDate      | 交易日       |
-|  longValue      | 多头市值<br/>FundPosition中security_type=1,5,6,7,9,13的资产市值为正数的累和       |
-|  shortValue     | 空头市值<br/>FundPosition中security_type=1,5,6,7,9,13的资产市值为负数的累和       |
-|  margin         | 保证金       |
-|  totalCostValue     | 实收资本       |
-|  totalMarketValue    | 总市值       |
+| 参数 |是否必填| 说明     |
+| :-------------| :------------- | :------------- |
+|  innerCode    |是  | 基金编号       |
+|  nvAccum      |是  |   净值       |
+|  tradeDate    |是  | 交易日       |
+|  longValue    |否  | 多头市值<br/>FundPosition中security_type=1,5,6,7,9,13的资产市值为正数的累和       |
+|  shortValue   |否  | 空头市值<br/>FundPosition中security_type=1,5,6,7,9,13的资产市值为负数的累和       |
+|  margin       |否  | 保证金       |
+|  totalCostValue  |否   | 实收资本       |
+|  totalMarketValue |否   | 总市值       |
 
 
 # 基金持仓
@@ -80,19 +79,19 @@ https://ssl-fof.xingyoucai.com
 
 > 输入参数
 
-| 参数 | 说明     |
-| :------------- | :------------- |
-| innerCode       | 基金编号      |
-| tradeDate       | 持仓日期      |
-| securityCode       | 证券ID      |
-| securityName       | 证券名称      |
-| securityType       | 证券类型1-	股票（1102股票投资，1102.65/81/82/83港股通，<br/>2-	投资基金（ETF）<br/>3-	保证金（1031存出保证金，<br/>4-	其他(1021备付金，<br/>（证券清算款，备付金，卖出回购，买入返售,短期借款）<br/>其中卖出回购和短期借款是负债类得减掉改数目。<br/>5-	股指期货<br/>6-	商品期货<br/>7-	债券期货<br/>8-	股指期权 （成本为负，则是卖出期权，成本为正，则是买入期权）<br/>9-	债券<br/>10-	应收利息<br/>11- 现金(1002存款,<br/>12- 私募产品 （其他私募产品，例如新晖1号，购买了中子星-星光E）<br/>13- 商品期权<br/>14- 负债|
-| cost       | 成本      |
-| costPrice       | 成本价格      |
-| volume       | 持仓量      |
-| close       | 市价      |
-| marketCap       | 持仓市值      |
-| updateTime       | 更新时间      |
+| 参数 |是否必填| 说明     |
+| :-------------| :------------- | :------------- |
+| innerCode     |是  | 基金编号      |
+| tradeDate     |是 | 持仓日期      |
+| securityCode  |是    | 证券ID      |
+| securityName  |否     | 证券名称      |
+| securityType  |是     | 证券类型1-	股票（1102股票投资，1102.65/81/82/83港股通，<br/>2-	投资基金（ETF）<br/>3-	保证金（1031存出保证金，<br/>4-	其他(1021备付金，<br/>（证券清算款，备付金，卖出回购，买入返售,短期借款）<br/>其中卖出回购和短期借款是负债类得减掉改数目。<br/>5-	股指期货<br/>6-	商品期货<br/>7-	债券期货<br/>8-	股指期权 （成本为负，则是卖出期权，成本为正，则是买入期权）<br/>9-	债券<br/>10-	应收利息<br/>11- 现金(1002存款,<br/>12- 私募产品 （其他私募产品，例如新晖1号，购买了中子星-星光E）<br/>13- 商品期权<br/>14- 负债|
+| cost       | 是| 成本      |
+| costPrice   |否    | 成本价格      |
+| volume      |否 | 持仓量      |
+| close      |否 | 市价      |
+| marketCap    |否   | 持仓市值      |
+| updateTime   |是    | 更新时间      |
 
 # 期货持仓
 > 接口
