@@ -91,7 +91,7 @@ https://ssl-fof.xingyoucai.com
 | volume      |否 | 持仓量      |
 | close      |否 | 市价      |
 | marketCap    |否   | 持仓市值      |
-| updateTime   |是    | 更新时间      |
+| updateTime   |否    | 更新时间(yyyy-MM-dd HH:mm:ss)     |
 
 # 期货持仓
 > 接口
