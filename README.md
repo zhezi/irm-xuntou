@@ -249,6 +249,10 @@ https://ssl-fof.xingyoucai.com
 | chart303      | <a href="https://code.hcharts.cn/chartData_json/U5OLjG">期权组合 </a>      |
 | chart304      | <a href="https://code.hcharts.cn/chartData_json/KSSLjT">期权组合 </a>      |
 | chart820      | <a href="https://code.hcharts.cn/chartData_json/ON4Ljf">投资解读 </a>      |
+| chart824       |<a href="https://code.hcharts.cn/temp/rZd6LT/1">各品种净盈亏</a>      |
+| chart825       |<a href="https://code.hcharts.cn/temp/59ps0z/2">各品种单位盈亏分解</a>      |
+| chart826       |<a href="https://code.hcharts.cn/temp/INOQzs">期货趋势归因</a>      |
+
 
 ---
 ## FOF策略
@@ -290,6 +294,7 @@ https://ssl-fof.xingyoucai.com
 | :------------- | :------------- |
 | chart806       | <a href="https://code.hcharts.cn/chartData_json/E9BLjv">持仓总览</a>|
 | chart807       | <a href="https://code.hcharts.cn/chartData_json/K5FLj2">基础线</a>|
+| chart808       | <a href="https://jshare.com.cn/xingyoucai/5epXwl/8">关键指标</a>|
 | chart809       |<a href="https://code.hcharts.cn/chartData_json/eVrLjW">月度收益</a>|
 | chart810       |<a href="https://code.hcharts.cn/chartData_json/VNZLja">回撤对比</a>|
 | chart811       |<a href="https://code.hcharts.cn/chartData_json/BStLjq">大类品种收益时序</a>|
