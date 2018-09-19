@@ -103,24 +103,24 @@ https://ssl-fof.xingyoucai.com
 
 > 输入参数
 
-| 参数 | 说明     |
-| :------------- | :------------- |
-| accountId       | 期货账户号       |
-| tradingDate       | 交易日期       |
-| accountNo       | 基金账户名       |
-| contractCode       | 合约代码       |
-| sessionId       | 交易回合号       |
-| transactionFlag       | 买卖<br/>1.	买<br/>-1.	卖      |
-| speculationHedging       | 投保<br/>1.投机<br/>2.套利<br/>3.套保<br/>       |
-| holdingQuantity       | 持仓数量       |
-| tradingMargin       | 保证金       |
-| holdPl       | 逐日盯市盈亏      |
-| cumPl       | 逐笔盯市盈亏      |
-| averagePrice       | 持仓均价       |
-| preSettlePrice       | 前结算价       |
-| securityType       | 合约类型<br/>1．	商品期货<br/>2．	股指期货<br/>3．	国债期货<br/>       |
-| settlePrice       | 结算价       |
-| updateTime       | 更新日期       |
+| 参数 |是否必填 | 说明     |
+| :-------------| :------------- | :------------- |
+| accountId  |是     | 期货账户号       |
+| tradingDate|是       | 交易日期       |
+| accountNo    |是   | 基金账户名       |
+| contractCode  |是     | 合约代码       |
+| sessionId     |是  | 交易回合号       |
+| transactionFlag    |是   | 买卖<br/>1.	买<br/>-1.	卖      |
+| speculationHedging  |是     | 投保<br/>1.投机<br/>2.套利<br/>3.套保<br/>       |
+| holdingQuantity     |是  | 持仓数量       |
+| tradingMargin   |否    | 保证金       |
+| holdPl   |是    | 逐日盯市盈亏      |
+| cumPl    |是   | 逐笔盯市盈亏      |
+| averagePrice   |是    | 持仓均价       |
+| preSettlePrice  |是     | 前结算价       |
+| securityType    |是   | 合约类型<br/>1．	商品期货<br/>2．	股指期货<br/>3．	国债期货<br/>       |
+| settlePrice   |是    | 结算价       |
+| updateTime    |否    | 更新日期       |
 
 # 结算单
 > 接口
@@ -132,27 +132,27 @@ https://ssl-fof.xingyoucai.com
 
 >输入参数
 
-| 参数 | 说明     |
-| :------------- | :------------- |
-| tradingDate       | 交易日期       |
-| accountId       | 基金账户号       |
-| accountNo       | 期货账户名       |
-| tradingTime       | 交易时间       |
-| contractCode       | 合约代码       |
-| sessionId       | 交易流水号       |
-| securityType       | 合约类型 <br/>1．	商品期货<br/>2．	股指期货<br/>3．	国债期货<br/>|
-| transactionFlag       | 买卖<br/>1.	买<br/>-1.	卖      |
-| openClose       | 开平<br/>1.	开仓<br/>2.	平仓<br/>3.	平昨<br/>4.	平今<br/> |
-| tradingPrice | 成交价格|
-| tradingQuantity|成交手数|
-| tradingValue|成交金额|
-| tradingCategory| 成交类型<br/>1.	普通成交<br/>2.	组合衍生成交<br/>|
-| speculationHedging       | 投保<br/>1.投机<br/>2.套利<br/>3.套保<br/>       |
-| liquidPl       | 逐日盯市盈亏       |
-| cumPl       | 逐笔盯市盈亏      |
-| commissionFee| 手续费|
-| dealDate | 实际成交日期|
-| updateTime       | 更新日期       |
+| 参数 |是否必填 | 说明     |
+| :-------------| :------------- | :------------- |
+| tradingDate  |是     | 交易日期       |
+| accountId    |是   | 基金账户号       |
+| accountNo     |是  | 期货账户名       |
+| tradingTime    |是   | 交易时间       |
+| contractCode   |是    | 合约代码       |
+| sessionId     |是  | 交易流水号       |
+| securityType    |是   | 合约类型 <br/>1．	商品期货<br/>2．	股指期货<br/>3．	国债期货<br/>|
+| transactionFlag  |是     | 买卖<br/>1.	买<br/>-1.	卖      |
+| openClose     |是   | 开平<br/>1.	开仓<br/>2.	平仓<br/>3.	平昨<br/>4.	平今<br/> |
+| tradingPrice |是 | 成交价格|
+| tradingQuantity |是|成交手数|
+| tradingValue |是|成交金额|
+| tradingCategory|否| 成交类型<br/>1.	普通成交<br/>2.	组合衍生成交<br/>|
+| speculationHedging  |是     | 投保<br/>1.投机<br/>2.套利<br/>3.套保<br/>       |
+| liquidPl   |是     | 逐日盯市盈亏       |
+| cumPl     |是   | 逐笔盯市盈亏      |
+| commissionFee|是 | 手续费|
+| dealDate |是  | 实际成交日期|
+| updateTime |否      | 更新日期       |
 
 # API(生成数据)
 > 接口
