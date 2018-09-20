@@ -93,7 +93,7 @@ https://ssl-fof.xingyoucai.com
 | marketCap    |否   | 持仓市值      |
 | updateTime   |否    | 更新时间(yyyy-MM-dd HH:mm:ss)     |
 
-# 期货持仓
+# 期货持仓数据
 > 接口
 * /api/v1.2/save/futuresHoldData(单个)
 * /api/v1.2/save/futuresHoldDataList(全部)
@@ -105,24 +105,24 @@ https://ssl-fof.xingyoucai.com
 
 | 参数 |是否必填 | 说明     |
 | :-------------| :------------- | :------------- |
-| accountId  |是     | 期货账户号       |
+| accountId  |是     | 基金编码       |
 | tradingDate|是       | 交易日期       |
-| accountNo    |是   | 基金账户名       |
+| accountNo    |是   |   客户期货资金账户     |
 | contractCode  |是     | 合约代码       |
-| sessionId     |是  | 交易回合号       |
+| sessionId     |是  | 成交序号       |
 | transactionFlag    |是   | 买卖<br/>1.	买<br/>-1.	卖      |
 | speculationHedging  |是     | 投保<br/>1.投机<br/>2.套利<br/>3.套保<br/>       |
 | holdingQuantity     |是  | 持仓数量       |
 | tradingMargin   |否    | 保证金       |
-| holdPl   |是    | 逐日盯市盈亏      |
-| cumPl    |是   | 逐笔盯市盈亏      |
+| holdPl   |是    | 逐日盯市-持仓盈亏      |
+| cumPl    |是   | 逐笔对冲-持仓盈亏      |
 | averagePrice   |是    | 持仓均价       |
 | preSettlePrice  |是     | 前结算价       |
 | securityType    |是   | 合约类型<br/>1．	商品期货<br/>2．	股指期货<br/>3．	国债期货<br/>       |
 | settlePrice   |是    | 结算价       |
-| updateTime    |否    | 更新日期       |
 
-# 结算单
+
+# 期货成交数据
 > 接口
 * /api/v1.2/save/futuresTradeData(单个)
 * /api/v1.2/save/futuresTradeDataList(全部)
@@ -135,11 +135,11 @@ https://ssl-fof.xingyoucai.com
 | 参数 |是否必填 | 说明     |
 | :-------------| :------------- | :------------- |
 | tradingDate  |是     | 交易日期       |
-| accountId    |是   | 基金账户号       |
-| accountNo     |是  | 期货账户名       |
+| accountId    |是   | 基金编码       |
+| accountNo     |是  | 客户期货资金账户       |
 | tradingTime    |是   | 交易时间       |
 | contractCode   |是    | 合约代码       |
-| sessionId     |是  | 交易流水号       |
+| sessionId     |是  | 成交序号       |
 | securityType    |是   | 合约类型 <br/>1．	商品期货<br/>2．	股指期货<br/>3．	国债期货<br/>|
 | transactionFlag  |是     | 买卖<br/>1.	买<br/>-1.	卖      |
 | openClose     |是   | 开平<br/>1.	开仓<br/>2.	平仓<br/>3.	平昨<br/>4.	平今<br/> |
@@ -148,11 +148,11 @@ https://ssl-fof.xingyoucai.com
 | tradingValue |是|成交金额|
 | tradingCategory|否| 成交类型<br/>1.	普通成交<br/>2.	组合衍生成交<br/>|
 | speculationHedging  |是     | 投保<br/>1.投机<br/>2.套利<br/>3.套保<br/>       |
-| liquidPl   |是     | 逐日盯市盈亏       |
-| cumPl     |是   | 逐笔盯市盈亏      |
+| liquidPl   |是     | 逐日盯市-平仓盈亏       |
+| cumPl     |是   | 逐笔对冲-平仓盈亏      |
 | commissionFee|是 | 手续费|
 | dealDate |是  | 实际成交日期|
-| updateTime |否      | 更新日期       |
+
 
 # API(生成数据)
 > 接口
