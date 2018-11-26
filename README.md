@@ -67,7 +67,7 @@ https://ssl-fof.xingyoucai.com
 |  shortValue   |否  | 空头市值<br/>FundPosition中security_type=1,5,6,7,9,13的资产市值为负数的累和       |
 |  margin       |否  | 保证金       |
 |  totalCostValue  |否   | 实收资本       |
-|  totalMarketValue |否   | 总市值       |
+|  totalMarketValue |否   | 基金资产净值       |
 
 
 # 基金持仓
